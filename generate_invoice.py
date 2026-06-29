@@ -56,7 +56,7 @@ def get_wrapped_lines(pdf, text, max_width):
             all_lines.append(current_line)
     return all_lines
 
-def create_invoice(client_name: str, client_address: str, items: list, tax_rate: float, due_date: str, down_payments: float = 0.0):
+def create_invoice(client_name: str, client_address: str, items: list, tax_rate: float, due_date: str, down_payments: float = 0.0, notes: str = ""):
     pdf = InvoicePDF()
     pdf.add_page()
     
@@ -200,6 +200,17 @@ def create_invoice(client_name: str, client_address: str, items: list, tax_rate:
     pdf.cell(30, banner_height, f'${total_due:,.2f} CAD', 0, 1, 'R')
     pdf.set_text_color(50, 50, 50)
     pdf.ln(10)
+
+    # SERVICE DESCRIPTION / NOTES
+    if notes and notes.strip():
+        pdf.set_font('Arial', 'B', 11)
+        pdf.set_text_color(44, 62, 80)
+        pdf.cell(0, 8, 'Service Description', 0, 1, 'L')
+        pdf.ln(2)
+        pdf.set_font('Arial', '', 9.5)
+        pdf.set_text_color(60, 60, 60)
+        pdf.multi_cell(0, 5, notes.strip(), 0, 'L')
+        pdf.ln(8)
     
     # PAYMENT TERMS
     pdf.set_font('Arial', 'B', 11)
