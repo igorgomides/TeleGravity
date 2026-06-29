@@ -254,7 +254,9 @@ def create_invoice(client_name: str, client_address: str, items: list, tax_rate:
     )
     pdf.multi_cell(0, 5.5, thank_you_text, 0, 'L')
     
-    filename = f"invoice_Painting_Service_{invoice_number}.pdf"
+    first_line_addr = client_address.split('\n')[0].strip() if client_address else ""
+    safe_addr = "".join([c for c in first_line_addr if c.isalnum() or c==' ' or c=='-']).strip().replace(' ', '_')
+    filename = f"invoice_Painting_Service_{invoice_number}_{safe_addr}.pdf"
     output_path = f"/tmp/{filename}"
     pdf.output(output_path)
     return output_path
