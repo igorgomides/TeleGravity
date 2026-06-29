@@ -266,7 +266,7 @@ def create_invoice(client_name: str, client_address: str, items: list, tax_rate:
     
     first_line_addr = client_address.split('\n')[0].strip() if client_address else ""
     safe_addr = "".join([c for c in first_line_addr if c.isalnum() or c==' ' or c=='-']).strip().replace(' ', '_')
-    filename = f"invoice_{service_type}_{invoice_number}_{safe_addr}.pdf"
+    filename = f"Invoice_{service_type}_{invoice_number}_{safe_addr}.pdf"
     output_path = f"/tmp/{filename}"
     pdf.output(output_path)
     return output_path
