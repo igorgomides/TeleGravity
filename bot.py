@@ -758,6 +758,46 @@ async def invoice_due(update: Update, context: ContextTypes.DEFAULT_TYPE):
             tax_rate=context.user_data['invoice_tax_rate'],
             due_date=context.user_data['invoice_due_date']
         )
+        
+        # Upload to website if configured
+        website_url = os.getenv("WEBSITE_URL")
+        secret_key = os.getenv("FLASK_SECRET_KEY")
+        if website_url and secret_key:
+            try:
+                import requests
+                # calculate total amount
+                subtotal = sum(item['qty'] * item['price'] for item in context.user_data['invoice_items'])
+                total_due = subtotal * (1 + context.user_data['invoice_tax_rate'])
+                
+                # extract invoice number
+                filename = os.path.basename(pdf_path)
+                match = re.search(r'(INV-\d{8}-\d{4})', filename)
+                invoice_number = match.group(1) if match else "INV-UNKNOWN"
+                
+                with open(pdf_path, 'rb') as f:
+                    files = {'file': (filename, f, 'application/pdf')}
+                    data = {
+                        'invoice_number': invoice_number,
+                        'client_name': context.user_data['invoice_client_name'],
+                        'amount': total_due
+                    }
+                    headers = {
+                        'Authorization': f'Bearer {secret_key}'
+                    }
+                    response = requests.post(
+                        f"{website_url.rstrip('/')}/api/invoices/telegram_upload",
+                        files=files,
+                        data=data,
+                        headers=headers,
+                        timeout=15
+                    )
+                    if response.status_code == 201:
+                        logging.info("Invoice uploaded to website successfully.")
+                    else:
+                        logging.error(f"Failed to upload invoice to website: {response.status_code} - {response.text}")
+            except Exception as upload_err:
+                logging.error(f"Error uploading invoice to website: {upload_err}")
+
         with open(pdf_path, 'rb') as pdf:
             await update.message.reply_document(document=pdf, filename=os.path.basename(pdf_path))
         os.remove(pdf_path)
