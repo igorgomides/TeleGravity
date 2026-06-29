@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Agents</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        .category { margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .category h2 { color: #e67e22; margin-bottom: 15px; }
+        .agent-list { list-style: none; padding: 0; }
+        .agent-item { margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+        .agent-header { display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: #fafafa; cursor: pointer; transition: background-color 0.2s; font-weight: bold; }
+        .agent-header:hover { background-color: #f0f0f0; }
+        .agent-body { padding: 15px; background-color: #fff; display: none; border-top: 1px solid #ddd; color: #555; }
+        .agent-copy { background: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9em; }
+        .agent-copy:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Seus Agentes Disponíveis</h1>
+        <p style="text-align:center; color:#7f8c8d;">Clique nos agentes para ver detalhes e instruções.</p>
+<div class="category"><h2>Advisory Board</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-board-chair</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-board-chair ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-board-chair')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-brene-brown</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-brene-brown ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-brene-brown')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-charlie-munger</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-charlie-munger ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-charlie-munger')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-derek-sivers</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-derek-sivers ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-derek-sivers')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-naval-ravikant</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-naval-ravikant ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-naval-ravikant')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-patrick-lencioni</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-patrick-lencioni ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-patrick-lencioni')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-peter-thiel</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-peter-thiel ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-peter-thiel')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-ray-dalio</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-ray-dalio ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-ray-dalio')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-reid-hoffman</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-reid-hoffman ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-reid-hoffman')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-simon-sinek</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-simon-sinek ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-simon-sinek')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 advisory-board-yvon-chouinard</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente advisory-board-yvon-chouinard ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('advisory-board-yvon-chouinard')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Brand Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-al-ries</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-al-ries ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-al-ries')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-alina-wheeler</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-alina-wheeler ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-alina-wheeler')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-archetype-consultant</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-archetype-consultant ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-archetype-consultant')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-brand-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-brand-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-brand-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-byron-sharp</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-byron-sharp ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-byron-sharp')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-david-aaker</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-david-aaker ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-david-aaker')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-denise-yohn</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-denise-yohn ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-denise-yohn')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-domain-scout</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-domain-scout ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-domain-scout')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-donald-miller</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-donald-miller ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-donald-miller')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-emily-heyward</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-emily-heyward ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-emily-heyward')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-jean-noel-kapferer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-jean-noel-kapferer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-jean-noel-kapferer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-kevin-keller</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-kevin-keller ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-kevin-keller')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-marty-neumeier</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-marty-neumeier ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-marty-neumeier')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-miller-sticky-brand</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-miller-sticky-brand ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-miller-sticky-brand')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 brand-squad-naming-strategist</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente brand-squad-naming-strategist ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('brand-squad-naming-strategist')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>C-Level Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-caio-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-caio-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-caio-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-cio-engineer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-cio-engineer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-cio-engineer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-cmo-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-cmo-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-cmo-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-coo-orchestrator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-coo-orchestrator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-coo-orchestrator')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-cto-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-cto-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-cto-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 c-level-squad-vision-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente c-level-squad-vision-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('c-level-squad-vision-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Claude Mastery</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-claude-mastery-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-claude-mastery-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-claude-mastery-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-config-engineer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-config-engineer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-config-engineer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-hooks-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-hooks-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-hooks-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-mcp-integrator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-mcp-integrator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-mcp-integrator')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-project-integrator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-project-integrator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-project-integrator')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-roadmap-sentinel</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-roadmap-sentinel ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-roadmap-sentinel')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-skill-craftsman</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-skill-craftsman ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-skill-craftsman')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 claude-code-mastery-swarm-orchestrator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente claude-code-mastery-swarm-orchestrator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('claude-code-mastery-swarm-orchestrator')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Copy Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-andre-chaperon</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-andre-chaperon ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-andre-chaperon')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-ben-settle</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-ben-settle ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-ben-settle')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-claude-hopkins</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-claude-hopkins ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-claude-hopkins')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-clayton-makepeace</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-clayton-makepeace ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-clayton-makepeace')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-copy-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-copy-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-copy-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-dan-kennedy</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-dan-kennedy ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-dan-kennedy')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-dan-koe</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-dan-koe ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-dan-koe')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-david-deutsch</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-david-deutsch ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-david-deutsch')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-david-ogilvy</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-david-ogilvy ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-david-ogilvy')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-eugene-schwartz</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-eugene-schwartz ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-eugene-schwartz')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-frank-kern</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-frank-kern ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-frank-kern')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-gary-bencivenga</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-gary-bencivenga ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-gary-bencivenga')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-gary-halbert</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-gary-halbert ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-gary-halbert')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-jim-rutz</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-jim-rutz ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-jim-rutz')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-joe-sugarman</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-joe-sugarman ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-joe-sugarman')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-john-carlton</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-john-carlton ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-john-carlton')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-jon-benson</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-jon-benson ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-jon-benson')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-parris-lampropoulos</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-parris-lampropoulos ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-parris-lampropoulos')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-robert-collier</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-robert-collier ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-robert-collier')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-russell-brunson</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-russell-brunson ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-russell-brunson')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-ry-schwartz</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-ry-schwartz ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-ry-schwartz')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-stefan-georgi</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-stefan-georgi ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-stefan-georgi')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 copy-squad-todd-brown</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente copy-squad-todd-brown ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('copy-squad-todd-brown')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Cybersecurity</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-busterer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-busterer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-busterer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-cartographer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-cartographer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-cartographer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-chris-sanders</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-chris-sanders ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-chris-sanders')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-command-generator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-command-generator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-command-generator')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-cyber-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-cyber-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-cyber-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-dirber</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-dirber ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-dirber')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-fuzzer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-fuzzer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-fuzzer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-georgia-weidman</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-georgia-weidman ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-georgia-weidman')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-jim-manico</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-jim-manico ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-jim-manico')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-marcus-carey</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-marcus-carey ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-marcus-carey')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-omar-santos</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-omar-santos ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-omar-santos')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-peter-kim</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-peter-kim ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-peter-kim')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-ripper</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-ripper ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-ripper')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-rogue</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-rogue ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-rogue')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 cybersecurity-shannon-runner</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente cybersecurity-shannon-runner ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('cybersecurity-shannon-runner')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Data Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-avinash-kaushik</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-avinash-kaushik ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-avinash-kaushik')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-data-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-data-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-data-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-david-spinks</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-david-spinks ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-david-spinks')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-nick-mehta</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-nick-mehta ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-nick-mehta')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-peter-fader</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-peter-fader ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-peter-fader')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-sean-ellis</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-sean-ellis ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-sean-ellis')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 data-squad-wes-kao</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente data-squad-wes-kao ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('data-squad-wes-kao')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Design Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-brad-frost</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-brad-frost ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-brad-frost')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-dan-mall</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-dan-mall ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-dan-mall')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-dave-malouf</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-dave-malouf ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-dave-malouf')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-design-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-design-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-design-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-design-system-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-design-system-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-design-system-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-ui-engineer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-ui-engineer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-ui-engineer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-ux-designer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-ux-designer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-ux-designer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 design-squad-visual-generator</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente design-squad-visual-generator ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('design-squad-visual-generator')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Hormozi Squad</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-ads</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-ads ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-ads')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-advisor</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-advisor ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-advisor')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-audit</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-audit ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-audit')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-closer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-closer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-closer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-content</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-content ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-content')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-copy</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-copy ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-copy')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-hooks</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-hooks ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-hooks')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-launch</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-launch ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-launch')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-leads</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-leads ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-leads')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-models</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-models ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-models')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-offers</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-offers ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-offers')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-pricing</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-pricing ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-pricing')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-retention</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-retention ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-retention')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-scale</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-scale ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-scale')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 hormozi-squad-hormozi-workshop</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente hormozi-squad-hormozi-workshop ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('hormozi-squad-hormozi-workshop')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Movement</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-analista-de-impacto</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-analista-de-impacto ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-analista-de-impacto')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-estrategista-de-ciclo</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-estrategista-de-ciclo ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-estrategista-de-ciclo')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-fenomenologo</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-fenomenologo ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-fenomenologo')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-identitario</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-identitario ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-identitario')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-manifestador</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-manifestador ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-manifestador')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-movement-architect</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-movement-architect ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-movement-architect')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 movement-movement-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente movement-movement-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('movement-movement-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Outros</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 Explore</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente Explore ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('Explore')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 Plan</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente Plan ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('Plan')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 general-purpose</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente general-purpose ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('general-purpose')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 statusline-setup</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente statusline-setup ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('statusline-setup')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Storytelling</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-blake-snyder</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-blake-snyder ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-blake-snyder')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-dan-harmon</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-dan-harmon ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-dan-harmon')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-joseph-campbell</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-joseph-campbell ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-joseph-campbell')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-keith-johnstone</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-keith-johnstone ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-keith-johnstone')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-kindra-hall</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-kindra-hall ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-kindra-hall')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-marshall-ganz</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-marshall-ganz ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-marshall-ganz')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-matthew-dicks</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-matthew-dicks ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-matthew-dicks')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-nancy-duarte</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-nancy-duarte ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-nancy-duarte')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-oren-klaff</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-oren-klaff ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-oren-klaff')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-park-howell</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-park-howell ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-park-howell')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-shawn-coyne</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-shawn-coyne ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-shawn-coyne')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 storytelling-story-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente storytelling-story-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('storytelling-story-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div><div class="category"><h2>Traffic Masters</h2><ul class="agent-list">
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-ad-midas</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-ad-midas ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-ad-midas')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-ads-analyst</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-ads-analyst ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-ads-analyst')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-creative-analyst</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-creative-analyst ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-creative-analyst')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-depesh-mandalia</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-depesh-mandalia ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-depesh-mandalia')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-fiscal</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-fiscal ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-fiscal')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-kasim-aslam</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-kasim-aslam ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-kasim-aslam')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-media-buyer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-media-buyer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-media-buyer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-molly-pittman</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-molly-pittman ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-molly-pittman')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-nicholas-kusmich</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-nicholas-kusmich ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-nicholas-kusmich')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-pedro-sobral</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-pedro-sobral ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-pedro-sobral')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-performance-analyst</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-performance-analyst ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-performance-analyst')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-pixel-specialist</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-pixel-specialist ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-pixel-specialist')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-ralph-burns</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-ralph-burns ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-ralph-burns')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-scale-optimizer</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-scale-optimizer ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-scale-optimizer')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-tom-breeze</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-tom-breeze ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-tom-breeze')">Copiar Nome</button>
+                </div>
+            </li>
+            
+            <li class="agent-item">
+                <div class="agent-header" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+                    <span>🤖 traffic-masters-traffic-chief</span>
+                    <span style="font-size:0.8em; color:#888;">▼</span>
+                </div>
+                <div class="agent-body">
+                    <p><strong>Como usar:</strong> Para interagir com este agente, envie a seguinte mensagem para o bot no formato:</p>
+                    <code style="background:#eee; padding:4px 8px; border-radius:4px; display:inline-block; margin: 10px 0;">Peça para o agente traffic-masters-traffic-chief ...</code>
+                    <br>
+                    <button class="agent-copy" onclick="navigator.clipboard.writeText('traffic-masters-traffic-chief')">Copiar Nome</button>
+                </div>
+            </li>
+            </ul></div>
+    </div>
+</body>
+</html>

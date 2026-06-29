@@ -1,0 +1,61 @@
+                       SISTEMA DE COOPERATIVAS DE CRÉDITO DO BRASIL
+                       PLATAFORMA DE SERVIÇOS FINANCEIROS DO SICOOB - SISBR
+
+       EXTRATO DE CONTA CORRENTE                                                                   30/01/2026 - 11:28:47
+Cooperativa:                                                               5024-5 / SICOOB UNICENTRO NORTE BRASILE
+Conta:                                                                                  221-6 / IGOR DE SOUZA GOMIDES
+Periodo:                                                                                           25/12/2025 - 31/12/2025
+
+       HISTÓRICO DE MOVIMENTAÇÃO
+
+Data    Documento       Histórico                                                                                   Valor
+31/12   5024003736          DÉB.SEGURO PRESTAMISTA                                                             R$ 17,50D
+31/12                       SALDO DO DIA                                                                    R$ 3.613,69C
+29/12   Pix                 PIX EMITIDO OUTRA IF                                                               R$ 20,00D
+                        Pagamento Pix 09.140.159 0001-86
+
+29/12   20150626            DÉB.TRANSF.CONTAS DIF.TIT. INTERCREDIS                                             R$ 50,31D
+                        FAV.: ARTE TRIGO INDUSTRIAL LTDA Transferência Pix IGOR DE SOUZA GOMIDES
+                        ***.138.101-**
+
+29/12   Pix                 PIX EMITIDO OUTRA IF                                                                R$ 4,00D
+                        Pagamento Pix ***.151.901-**
+
+29/12                       SALDO DO DIA                                                                    R$ 3.631,19C
+26/12   221                 DEB.PARCELAS SUBSC./INTEGR.                                                        R$ 20,00D
+26/12   Pix                 PIX EMITIDO OUTRA IF                                                               R$ 25,00D
+                        Pagamento Pix ***.788.125-**
+
+26/12   Pix                 PIX EMITIDO OUTRA IF                                                               R$ 30,00D
+                        Pagamento Pix 09.140.159 0001-86
+
+26/12                       SALDO DO DIA                                                                    R$ 3.705,50C
+24/12                   SALDO BLOQUEADO ANTERIOR                                                                 R$ 0,00*
+24/12                       SALDO ANTERIOR                                                                  R$ 3.780,50C
+
+
+       RESUMO
+
+Saldo em conta:                                                                                                  3.613,69C
+Cheque especial contratado:                                                                                      5.000,00C
+Juros vencidos provisionados:                                                                                        0,00D
+Tarifas vencidas provisionadas:                                                                                      0,00D
+Saldo disponível:                                                                                                8.613,69C
+Saldo bloqueado (cheques):                                                                                          0,00C*
+Saldo bloqueado (judicial):                                                                                          0,00C
+ENCARGOS VENCIDOS REMANESCENTES
+Juros vencidos remanescentes:                                                                                       0,00D
+Tarifas vencidas remanescentes:                                                                                     0,00D
+ENCARGOS A VENCER
+Previsão IOF:                                                                                                            -
+Previsão encargos:                                                                                                       -
+Previsão tarifas:                                                                                                        -
+OUTRAS INFORMAÇÕES
+Vencimento de cheque especial:                                                                                  04/02/2026
+Taxa cheque especial:                                                                                               7,99%
+Custo Efetivo Total (a.m.):                                                                                         8,69%
+Custo Efetivo Total (a.a.):                                                                                       175,55%
+    INFORMAÇÕES
+
+SAC: 0800 724 4420 / OUVIDORIA SICOOB: 08007250996
+

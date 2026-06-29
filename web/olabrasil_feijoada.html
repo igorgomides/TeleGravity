@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OlaBrasil — Feijoada</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: #1A0A02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .canvas {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1C0C04 0%, #2A1508 45%, #1A0A02 100%);
+    }
+
+    /* ---- Warm glow backgrounds ---- */
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+    }
+    .glow-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(180,60,0,0.35), transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .glow-2 {
+      width: 400px; height: 300px;
+      background: radial-gradient(circle, rgba(249,168,37,0.18), transparent 70%);
+      bottom: 80px; right: 0px;
+    }
+    .glow-3 {
+      width: 360px; height: 300px;
+      background: radial-gradient(circle, rgba(46,125,50,0.15), transparent 70%);
+      top: 100px; left: -40px;
+    }
+
+    /* ---- Top & bottom color strips ---- */
+    .top-strip {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 12px;
+      background: linear-gradient(90deg, #E65100, #F9A825, #2E7D32, #E65100, #F9A825);
+      background-size: 300% 100%;
+    }
+    .bottom-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 12px;
+      background: linear-gradient(90deg, #F9A825, #2E7D32, #E65100, #F9A825, #2E7D32);
+      background-size: 300% 100%;
+    }
+
+    /* ---- Brand ---- */
+    .brand {
+      position: absolute;
+      top: 44px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: #F5DEB3;
+    }
+    .brand span { color: #E65100; }
+
+    .brand-tagline {
+      position: absolute;
+      top: 106px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: rgba(245,222,179,0.45);
+      text-transform: uppercase;
+    }
+
+    /* ---- Central pot illustration ---- */
+    .pot-wrap {
+      position: absolute;
+      top: 148px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 480px;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ---- Steam lines ---- */
+    .steam-wrap {
+      position: absolute;
+      top: 128px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 90px;
+    }
+
+    /* ---- Headline ---- */
+    .headline-wrap {
+      position: absolute;
+      top: 578px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+    .headline-label {
+      font-family: 'Arial', Helvetica, sans-serif;
+      font-size: 16px;
+      letter-spacing: 6px;
+      color: #E65100;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .headline {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 112px;
+      font-weight: 700;
+      line-height: 0.92;
+      color: #F5DEB3;
+      text-shadow: 4px 5px 0px rgba(230, 81, 0, 0.3);
+      display: block;
+      letter-spacing: 2px;
+    }
+    .headline-sub {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 44px;
+      font-weight: 400;
+      color: #E65100;
+      display: block;
+      margin-top: 6px;
+      letter-spacing: 4px;
+      font-style: italic;
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      position: absolute;
+      top: 774px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .divider-line {
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(249,168,37,0.6), transparent);
+    }
+    .divider-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #F9A825;
+    }
+
+    /* ---- Body copy ---- */
+    .body-copy {
+      position: absolute;
+      top: 800px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 26px;
+      color: rgba(245,222,179,0.75);
+      line-height: 1.55;
+      padding: 0 110px;
+      font-style: italic;
+    }
+
+    /* ---- Acompanhamentos tags ---- */
+    .tags-row {
+      position: absolute;
+      bottom: 82px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    .tag {
+      font-family: 'Arial', Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(245,222,179,0.55);
+      padding: 5px 14px;
+      border: 1px solid rgba(245,222,179,0.2);
+      border-radius: 20px;
+    }
+
+    /* ---- Leaf decorations ---- */
+    .leaf {
+      position: absolute;
+      z-index: 4;
+      opacity: 0.45;
+    }
+
+    /* ---- Orange slice decorations ---- */
+    .orange {
+      position: absolute;
+      z-index: 4;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+
+    <!-- Glows -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <!-- Color strips -->
+    <div class="top-strip"></div>
+    <div class="bottom-strip"></div>
+
+    <!-- ======== DECORATIVE LEAVES ======== -->
+    <div class="leaf" style="top:180px; left:24px; transform:rotate(-30deg);">
+      <svg width="70" height="100" viewBox="0 0 70 100" fill="none">
+        <path d="M35 95 C35 95 5 60 10 35 C15 10 55 10 60 35 C65 60 35 95 35 95Z" fill="#2E7D32"/>
+        <line x1="35" y1="95" x2="35" y2="30" stroke="#1B5E20" stroke-width="2"/>
+        <line x1="35" y1="70" x2="20" y2="55" stroke="#1B5E20" stroke-width="1.2"/>
+        <line x1="35" y1="58" x2="48" y2="45" stroke="#1B5E20" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div class="leaf" style="top:240px; left:60px; transform:rotate(15deg); opacity:0.3;">
+      <svg width="50" height="72" viewBox="0 0 50 72" fill="none">
+        <path d="M25 68 C25 68 4 44 8 26 C12 8 38 8 42 26 C46 44 25 68 25 68Z" fill="#388E3C"/>
+        <line x1="25" y1="68" x2="25" y2="22" stroke="#1B5E20" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="leaf" style="top:160px; right:28px; transform:rotate(25deg);">
+      <svg width="60" height="88" viewBox="0 0 60 88" fill="none">
+        <path d="M30 84 C30 84 4 52 8 30 C12 8 48 8 52 30 C56 52 30 84 30 84Z" fill="#2E7D32"/>
+        <line x1="30" y1="84" x2="30" y2="26" stroke="#1B5E20" stroke-width="2"/>
+        <line x1="30" y1="62" x2="44" y2="48" stroke="#1B5E20" stroke-width="1.2"/>
+        <line x1="30" y1="50" x2="18" y2="38" stroke="#1B5E20" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div class="leaf" style="top:480px; left:18px; transform:rotate(-10deg); opacity:0.35;">
+      <svg width="44" height="64" viewBox="0 0 44 64" fill="none">
+        <path d="M22 60 C22 60 2 38 6 22 C10 6 34 6 38 22 C42 38 22 60 22 60Z" fill="#4CAF50"/>
+        <line x1="22" y1="60" x2="22" y2="20" stroke="#2E7D32" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="leaf" style="top:430px; right:22px; transform:rotate(35deg); opacity:0.3;">
+      <svg width="48" height="68" viewBox="0 0 48 68" fill="none">
+        <path d="M24 64 C24 64 2 40 6 24 C10 6 38 6 42 24 C46 42 24 64 24 64Z" fill="#388E3C"/>
+        <line x1="24" y1="64" x2="24" y2="22" stroke="#1B5E20" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <!-- ======== ORANGE SLICES ======== -->
+    <div class="orange" style="bottom:180px; left:44px; opacity:0.7;">
+      <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
+        <circle cx="44" cy="44" r="40" fill="#E65100" opacity="0.9"/>
+        <circle cx="44" cy="44" r="34" fill="#FF6D00"/>
+        <circle cx="44" cy="44" r="28" fill="#FF8F00"/>
+        <!-- segments -->
+        <line x1="44" y1="16" x2="44" y2="72" stroke="#E65100" stroke-width="1.2" opacity="0.7"/>
+        <line x1="16" y1="44" x2="72" y2="44" stroke="#E65100" stroke-width="1.2" opacity="0.7"/>
+        <line x1="24" y1="24" x2="64" y2="64" stroke="#E65100" stroke-width="1.2" opacity="0.7"/>
+        <line x1="64" y1="24" x2="24" y2="64" stroke="#E65100" stroke-width="1.2" opacity="0.7"/>
+        <circle cx="44" cy="44" r="6" fill="#E65100" opacity="0.8"/>
+        <!-- shine -->
+        <ellipse cx="33" cy="30" rx="10" ry="6" fill="white" opacity="0.2" transform="rotate(-30 33 30)"/>
+      </svg>
+    </div>
+    <div class="orange" style="bottom:220px; right:38px; opacity:0.55; transform:rotate(18deg);">
+      <svg width="68" height="68" viewBox="0 0 68 68" fill="none">
+        <circle cx="34" cy="34" r="30" fill="#E65100" opacity="0.9"/>
+        <circle cx="34" cy="34" r="25" fill="#FF6D00"/>
+        <circle cx="34" cy="34" r="20" fill="#FF8F00"/>
+        <line x1="34" y1="10" x2="34" y2="58" stroke="#E65100" stroke-width="1" opacity="0.7"/>
+        <line x1="10" y1="34" x2="58" y2="34" stroke="#E65100" stroke-width="1" opacity="0.7"/>
+        <line x1="17" y1="17" x2="51" y2="51" stroke="#E65100" stroke-width="1" opacity="0.7"/>
+        <line x1="51" y1="17" x2="17" y2="51" stroke="#E65100" stroke-width="1" opacity="0.7"/>
+        <circle cx="34" cy="34" r="5" fill="#E65100" opacity="0.8"/>
+      </svg>
+    </div>
+
+    <!-- ======== BRAND NAME ======== -->
+    <div class="brand">Ola<span>Brasil</span></div>
+    <div class="brand-tagline">sabores do brasil para o mundo</div>
+
+    <!-- ======== STEAM ======== -->
+    <div class="steam-wrap">
+      <svg width="300" height="90" viewBox="0 0 300 90" fill="none">
+        <path d="M80 85 C75 65 90 55 85 35 C80 15 95 8 90 0" stroke="rgba(245,222,179,0.18)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M150 85 C145 60 165 48 158 28 C152 10 168 4 162 0" stroke="rgba(245,222,179,0.25)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M220 85 C215 65 230 55 225 35 C220 15 235 8 230 0" stroke="rgba(245,222,179,0.18)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M110 88 C107 70 120 62 115 44" stroke="rgba(245,222,179,0.12)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M190 88 C187 70 200 62 195 44" stroke="rgba(245,222,179,0.12)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- ======== CLAY POT (SVG) ======== -->
+    <div class="pot-wrap">
+      <svg width="440" height="400" viewBox="0 0 440 400" fill="none">
+        <defs>
+          <radialGradient id="potGrad" cx="38%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#8D4E1A"/>
+            <stop offset="60%" stop-color="#6D3410"/>
+            <stop offset="100%" stop-color="#4A2008"/>
+          </radialGradient>
+          <radialGradient id="contentGrad" cx="40%" cy="25%" r="65%">
+            <stop offset="0%" stop-color="#1C0E04"/>
+            <stop offset="50%" stop-color="#150A02"/>
+            <stop offset="100%" stop-color="#0D0602"/>
+          </radialGradient>
+          <radialGradient id="rimGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#A0622A"/>
+            <stop offset="100%" stop-color="#7A4518"/>
+          </radialGradient>
+          <filter id="potShadow" x="-15%" y="-10%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="rgba(0,0,0,0.65)"/>
+          </filter>
+          <clipPath id="potClip">
+            <ellipse cx="220" cy="220" rx="152" ry="150"/>
+          </clipPath>
+        </defs>
+
+        <!-- Pot shadow -->
+        <ellipse cx="220" cy="370" rx="148" ry="22" fill="rgba(0,0,0,0.5)" filter="url(#potShadow)"/>
+
+        <!-- Pot body -->
+        <path d="M68 200 C68 120 140 62 220 62 C300 62 372 120 372 200 C372 300 340 360 220 360 C100 360 68 300 68 200Z"
+              fill="url(#potGrad)" filter="url(#potShadow)"/>
+
+        <!-- Pot interior (feijoada content) -->
+        <ellipse cx="220" cy="145" rx="140" ry="52" fill="url(#contentGrad)"/>
+
+        <!-- Feijoada beans and meat texture -->
+        <!-- Beans (dark black beans) -->
+        <ellipse cx="178" cy="140" rx="11" ry="8" fill="#0D0602" opacity="0.95"/>
+        <ellipse cx="200" cy="148" rx="10" ry="7.5" fill="#160C04" opacity="0.9"/>
+        <ellipse cx="222" cy="137" rx="12" ry="8.5" fill="#0A0401" opacity="0.95"/>
+        <ellipse cx="245" cy="145" rx="10" ry="7" fill="#120A03" opacity="0.9"/>
+        <ellipse cx="264" cy="138" rx="9.5" ry="7" fill="#0D0602" opacity="0.95"/>
+        <ellipse cx="186" cy="155" rx="9" ry="6.5" fill="#160C04" opacity="0.85"/>
+        <ellipse cx="210" cy="158" rx="10.5" ry="7" fill="#0A0401" opacity="0.85"/>
+        <ellipse cx="234" cy="153" rx="9" ry="6.5" fill="#120A03" opacity="0.85"/>
+        <ellipse cx="255" cy="155" rx="8.5" ry="6" fill="#0D0602" opacity="0.85"/>
+        <ellipse cx="172" cy="152" rx="8" ry="6" fill="#160C04" opacity="0.8"/>
+        <ellipse cx="274" cy="148" rx="8" ry="6" fill="#120A03" opacity="0.8"/>
+
+        <!-- Linguica sausage piece -->
+        <path d="M148 136 C148 128 162 124 170 128 L174 150 C174 158 160 162 152 158 Z"
+              fill="#8B1A1A" opacity="0.9"/>
+        <path d="M150 136 C150 129 163 126 170 130"
+              stroke="#C62828" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+        <!-- Carne seca piece -->
+        <path d="M278 130 C284 126 296 128 298 136 L296 154 C294 162 282 160 278 154 Z"
+              fill="#7A3B0E" opacity="0.85"/>
+
+        <!-- Pork rib piece -->
+        <path d="M190 126 C196 120 210 120 212 128 L210 145 C208 152 195 152 192 145 Z"
+              fill="#8B3A0F" opacity="0.8"/>
+        <!-- bone -->
+        <line x1="201" y1="120" x2="201" y2="150" stroke="rgba(245,222,179,0.35)" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Broth surface shine -->
+        <ellipse cx="185" cy="132" rx="22" ry="6" fill="rgba(180,100,20,0.18)" transform="rotate(-8 185 132)"/>
+        <ellipse cx="255" cy="130" rx="18" ry="5" fill="rgba(180,100,20,0.14)" transform="rotate(6 255 130)"/>
+
+        <!-- Rim of pot (top opening) -->
+        <ellipse cx="220" cy="148" rx="152" ry="54" fill="none" stroke="url(#rimGrad)" stroke-width="14"/>
+        <ellipse cx="220" cy="148" rx="152" ry="54" fill="none" stroke="rgba(255,200,140,0.12)" stroke-width="4"/>
+
+        <!-- Pot rim highlight -->
+        <path d="M100 122 C130 108 165 102 220 100 C275 98 312 106 340 122"
+              stroke="rgba(255,210,160,0.25)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+        <!-- Pot body sheen -->
+        <path d="M88 190 C90 160 104 135 120 118"
+              stroke="rgba(255,210,160,0.18)" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+        <!-- Pot handles -->
+        <path d="M68 195 C42 192 34 212 40 228 C46 244 64 244 72 240"
+              stroke="#7A4518" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <path d="M372 195 C398 192 406 212 400 228 C394 244 376 244 368 240"
+              stroke="#7A4518" stroke-width="18" fill="none" stroke-linecap="round"/>
+        <!-- handle highlight -->
+        <path d="M44 210 C42 220 44 232 50 238"
+              stroke="rgba(255,210,160,0.2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M396 210 C398 220 396 232 390 238"
+              stroke="rgba(255,210,160,0.2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+        <!-- Bottom of pot slightly lighter -->
+        <path d="M100 340 C140 370 300 370 340 340"
+              stroke="rgba(100,50,10,0.4)" stroke-width="20" fill="none" stroke-linecap="round"/>
+
+        <!-- Pot base ring -->
+        <ellipse cx="220" cy="355" rx="90" ry="14" fill="#5A2A0A" opacity="0.7"/>
+      </svg>
+    </div>
+
+    <!-- ======== HEADLINE ======== -->
+    <div class="headline-wrap">
+      <span class="headline-label">tradicional &amp; irresistível</span>
+      <span class="headline">Feijoada</span>
+      <span class="headline-sub">do jeito certo</span>
+    </div>
+
+    <!-- ======== DIVIDER ======== -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <!-- Bean icon -->
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <ellipse cx="11" cy="11" rx="9" ry="7" fill="#1C0E04" stroke="#E65100" stroke-width="1.5"/>
+        <path d="M7 11 C9 8 13 8 15 11" stroke="rgba(230,81,0,0.5)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ======== BODY COPY ======== -->
+    <div class="body-copy">
+      Feijão preto, carnes selecionadas e o ritual<br>
+      dos acompanhamentos que só o Brasil sabe fazer.
+    </div>
+
+    <!-- ======== TAGS ROW ======== -->
+    <div class="tags-row">
+      <span class="tag">Feijão Preto</span>
+      <span class="tag">Couve</span>
+      <span class="tag">Farofa</span>
+      <span class="tag">Arroz</span>
+      <span class="tag">Laranja</span>
+    </div>
+
+  </div>
+</body>
+</html>

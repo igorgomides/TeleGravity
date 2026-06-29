@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Antigravity Bot
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/igor-gomides/Documents/Antigravity/telegram-antigravity-bot
+ExecStart=/home/igor-gomides/Documents/Antigravity/telegram-antigravity-bot/venv/bin/python3 /home/igor-gomides/Documents/Antigravity/telegram-antigravity-bot/bot.py
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

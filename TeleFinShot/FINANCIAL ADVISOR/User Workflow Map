@@ -1,0 +1,143 @@
+# 📱 Financial Advisor — User Workflow Map
+
+## Visão Geral
+
+Mapa completo da jornada do usuário no app **Financial Advisor**, desde a primeira abertura até a conversão em plano Pro.
+
+---
+
+## Fluxo Completo do Usuário
+
+```mermaid
+flowchart TD
+    START(("🚀 App Abre")) --> INDEX["Welcome Screen<br/>(index.tsx)"]
+    
+    INDEX --> AUTH_CHECK{"Usuário<br/>logado?"}
+    
+    %% === GUEST FLOW ===
+    AUTH_CHECK -- "❌ Não" --> GUEST_VIEW["Tela Guest<br/>Logo + Descrição"]
+    GUEST_VIEW --> LOGIN_BTN["Botão: Log In"]
+    GUEST_VIEW --> SIGNUP_BTN["Botão: Create Account"]
+    
+    LOGIN_BTN --> LOGIN["Login Screen<br/>(login.tsx)"]
+    SIGNUP_BTN --> SIGNUP["Signup Screen<br/>(signup.tsx)"]
+    
+    LOGIN -- "✅ Sucesso" --> CHAT
+    LOGIN -- "Link: Sign Up" --> SIGNUP
+    SIGNUP -- "✅ Sucesso" --> LOGIN
+    SIGNUP -- "Link: Log In" --> LOGIN
+    
+    %% === AUTHENTICATED FLOW ===
+    AUTH_CHECK -- "✅ Sim" --> PROFILE_VIEW["Tela Autenticada<br/>Avatar + Nome + Email"]
+    
+    PROFILE_VIEW --> EDIT_PROFILE["Editar Perfil<br/>Nome / Avatar"]
+    PROFILE_VIEW --> SNAPSHOT_CHECK{"Já fez<br/>entrevista?"}
+    
+    %% === FIRST TIME USER ===
+    SNAPSHOT_CHECK -- "❌ Primeira vez" --> START_INTERVIEW["Botão: Start<br/>Financial Interview"]
+    START_INTERVIEW --> CHAT["AI Chat<br/>(chat.tsx)"]
+    
+    %% === RETURNING USER ===
+    SNAPSHOT_CHECK -- "✅ Já fez" --> RETURNING_OPTIONS["Opções do Usuário"]
+    RETURNING_OPTIONS --> VIEW_SNAPSHOT["Botão: View<br/>My Snapshot"]
+    RETURNING_OPTIONS --> EXPLORE_PRO["Botão: Explore<br/>Pro Plan"]
+    RETURNING_OPTIONS --> NEW_INTERVIEW["Botão: Start a<br/>New Interview"]
+    
+    VIEW_SNAPSHOT --> SNAPSHOT["Snapshot Screen<br/>(snapshot.tsx)"]
+    EXPLORE_PRO --> UPSELL["Upsell Screen<br/>(upsell.tsx)"]
+    NEW_INTERVIEW --> CHAT
+    
+    %% === CHAT FLOW ===
+    CHAT -- "IA coleta dados<br/>financeiros" --> CHAT_COMPLETE["Entrevista<br/>Concluída"]
+    CHAT_COMPLETE -- "Dados salvos em<br/>AsyncStorage" --> SNAPSHOT
+    
+    %% === UPSELL FLOW ===
+    UPSELL --> SUBSCRIBE["Botão: Subscribe Now<br/>(Fluxo futuro)"]
+    UPSELL --> LATER["Botão: Maybe Later<br/>(volta)"]
+    
+    %% === ADMIN FLOW ===
+    PROFILE_VIEW -- "Se admin" --> ADMIN["Admin Dashboard<br/>(admin.tsx)"]
+    ADMIN --> USER_LIST["Lista de Usuários"]
+    ADMIN --> RESET_PW["Reset Senha<br/>de Usuários"]
+    
+    %% === LOGOUT ===
+    PROFILE_VIEW --> SIGNOUT["Sign Out"]
+    SIGNOUT --> GUEST_VIEW
+    
+    %% === STYLING ===
+    classDef screen fill:#0CD179,color:#fff,stroke:#0aa565,stroke-width:2px
+    classDef decision fill:#1A1A1A,color:#fff,stroke:#333,stroke-width:2px
+    classDef action fill:#F4F7F6,color:#111,stroke:#ccc,stroke-width:1px
+    classDef start fill:#FF4D4D,color:#fff,stroke:#cc3333,stroke-width:2px
+    
+    class INDEX,LOGIN,SIGNUP,CHAT,SNAPSHOT,UPSELL,ADMIN screen
+    class AUTH_CHECK,SNAPSHOT_CHECK decision
+    class START start
+```
+
+---
+
+## Detalhamento por Fase
+
+### 🔹 Fase 1 — Aquisição (Onboarding)
+
+| Tela | Arquivo | Propósito |
+|------|---------|-----------|
+| Welcome | [index.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/index.tsx) | Landing page com logo, pitch e CTAs |
+| Login | [login.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/login.tsx) | Autenticação via email/senha (Supabase) |
+| Signup | [signup.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/signup.tsx) | Criação de conta |
+
+### 🔹 Fase 2 — Engajamento (Core Loop)
+
+| Tela | Arquivo | Propósito |
+|------|---------|-----------|
+| Chat (AI Interview) | [chat.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/chat.tsx) | Entrevista financeira guiada por IA (Gemini) |
+| Financial Snapshot | [snapshot.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/snapshot.tsx) | Relatório visual da saúde financeira |
+
+### 🔹 Fase 3 — Monetização
+
+| Tela | Arquivo | Propósito |
+|------|---------|-----------|
+| Upsell (Pro Plan) | [upsell.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/upsell.tsx) | Conversão para plano pago ($9.99/mês) |
+
+### 🔹 Fase 4 — Administração
+
+| Tela | Arquivo | Propósito |
+|------|---------|-----------|
+| Admin Dashboard | [admin.tsx](file:///Users/igorgomides/Documents/ANTIGRAVITY/FINANCIAL%20ADVISOR/app/admin.tsx) | Gestão de usuários (só admins) |
+
+---
+
+## 🔄 Ciclo de Retenção do Usuário
+
+```mermaid
+flowchart LR
+    A["Login"] --> B["Entrevista IA"]
+    B --> C["Snapshot"]
+    C --> D["Upsell Pro"]
+    D -- "Assina" --> E["Features Pro<br/>(futuro)"]
+    D -- "Recusa" --> F["Nova Entrevista"]
+    F --> B
+    C --> F
+
+    style A fill:#0CD179,color:#fff
+    style B fill:#0CD179,color:#fff
+    style C fill:#0CD179,color:#fff
+    style D fill:#1A1A1A,color:#fff
+    style E fill:#FF4D4D,color:#fff
+    style F fill:#F4F7F6,color:#111,stroke:#ccc
+```
+
+---
+
+## 💡 Sugestões para Melhorar a Jornada
+
+| # | Sugestão | Impacto |
+|---|----------|---------|
+| 1 | **Onboarding tutorial** — guia interativo para novos usuários antes do chat | 🟢 Reduz abandono |
+| 2 | **Progress indicator no chat** — mostrar barra de progresso durante a entrevista | 🟢 Aumenta conclusão |
+| 3 | **Push notification** — lembrar usuários que não completaram a entrevista | 🟡 Retenção |
+| 4 | **Compartilhar Snapshot** — permitir export PDF ou share do relatório | 🟡 Viralidade |
+| 5 | **Histórico de Snapshots** — comparar evolução financeira ao longo do tempo | 🟢 Engajamento recorrente |
+| 6 | **Tela de Goals** — definir metas financeiras e acompanhar progresso | 🟢 Cria hábito de uso |
+| 7 | **Gamificação** — badges/streaks por completar entrevistas mensais | 🟡 Retenção longo prazo |

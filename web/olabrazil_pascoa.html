@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OlaBrazil — Feliz Páscoa</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .canvas {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #FFF5E4 0%, #FFF0D6 40%, #FFF8EC 100%);
+    }
+
+    /* ---- Background decorative blobs ---- */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(0px);
+      opacity: 0.18;
+    }
+    .blob-1 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, #FF7043, #FF8A65);
+      top: -100px; left: -100px;
+      border-radius: 62% 38% 55% 45% / 48% 52% 48% 52%;
+    }
+    .blob-2 {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, #FFD54F, #FFC107);
+      bottom: -80px; right: -80px;
+      border-radius: 45% 55% 38% 62% / 52% 48% 52% 48%;
+    }
+    .blob-3 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, #EC407A, #F48FB1);
+      top: 60px; right: 40px;
+      border-radius: 55% 45% 60% 40% / 40% 60% 40% 60%;
+      opacity: 0.14;
+    }
+    .blob-4 {
+      width: 240px; height: 240px;
+      background: radial-gradient(circle, #66BB6A, #A5D6A7);
+      bottom: 80px; left: 60px;
+      border-radius: 40% 60% 50% 50% / 60% 40% 60% 40%;
+      opacity: 0.15;
+    }
+
+    /* ---- Top banner strip ---- */
+    .top-strip {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 14px;
+      background: linear-gradient(90deg, #FF7043, #FFC107, #EC407A, #66BB6A, #FF7043);
+      background-size: 300% 100%;
+    }
+    .bottom-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 14px;
+      background: linear-gradient(90deg, #66BB6A, #EC407A, #FFC107, #FF7043, #66BB6A);
+      background-size: 300% 100%;
+    }
+
+    /* ---- Main content ---- */
+    .content {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 60px 80px;
+    }
+
+    /* ---- Brand name ---- */
+    .brand {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #1A1A1A;
+      position: absolute;
+      top: 48px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+    .brand span {
+      color: #FF7043;
+    }
+
+    /* ---- Tagline under brand ---- */
+    .brand-tagline {
+      position: absolute;
+      top: 112px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      letter-spacing: 4px;
+      color: #888;
+      text-transform: uppercase;
+    }
+
+    /* ---- Eggs area ---- */
+    .eggs-row {
+      position: absolute;
+      top: 160px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      align-items: flex-end;
+    }
+
+    /* ---- Main headline ---- */
+    .headline-wrap {
+      position: absolute;
+      top: 490px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+    .headline {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 108px;
+      font-weight: 700;
+      line-height: 1;
+      color: #2C1A0E;
+      text-shadow: 3px 4px 0px rgba(255, 112, 67, 0.18);
+      display: block;
+    }
+    .headline-sub {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 58px;
+      font-weight: 400;
+      color: #FF7043;
+      display: block;
+      margin-top: 4px;
+      letter-spacing: 2px;
+    }
+
+    /* ---- Divider ---- */
+    .divider {
+      position: absolute;
+      top: 700px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .divider-line {
+      width: 160px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FF7043, transparent);
+    }
+    .divider-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #FF7043;
+    }
+
+    /* ---- Body copy ---- */
+    .body-copy {
+      position: absolute;
+      top: 730px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Arial', Helvetica, sans-serif;
+      font-size: 28px;
+      color: #5D4037;
+      line-height: 1.55;
+      padding: 0 120px;
+      font-weight: 400;
+    }
+
+    /* ---- Bottom tagline ---- */
+    .bottom-tagline {
+      position: absolute;
+      bottom: 44px;
+      left: 0; right: 0;
+      text-align: center;
+      font-family: 'Arial', Helvetica, sans-serif;
+      font-size: 18px;
+      color: #FF7043;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* ---- Scattered flowers / confetti (SVG inline via background) ---- */
+    .decor-flower {
+      position: absolute;
+      z-index: 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <!-- Color strips -->
+    <div class="top-strip"></div>
+    <div class="bottom-strip"></div>
+
+    <!-- ======== DECORATIVE FLOWERS (SVG) ======== -->
+
+    <!-- Top-left flower -->
+    <div class="decor-flower" style="top:30px; left:30px; opacity:0.75;">
+      <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
+        <g transform="translate(45,45)">
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFC107" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFD54F" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFC107" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFD54F" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFC107" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFD54F" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFC107" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-16" rx="9" ry="16" fill="#FFD54F" transform="rotate(315)"/>
+          <circle cx="0" cy="0" r="11" fill="#FF7043"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Top-right flower -->
+    <div class="decor-flower" style="top:140px; right:28px; opacity:0.7;">
+      <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
+        <g transform="translate(35,35)">
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#EC407A" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#F48FB1" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#EC407A" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#F48FB1" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#EC407A" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-12" rx="7" ry="12" fill="#F48FB1" transform="rotate(300)"/>
+          <circle cx="0" cy="0" r="9" fill="#FFF176"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Bottom-left flower -->
+    <div class="decor-flower" style="bottom:80px; left:44px; opacity:0.65;">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <g transform="translate(40,40)">
+          <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#66BB6A" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#A5D6A7" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#66BB6A" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#A5D6A7" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-13" rx="8" ry="13" fill="#66BB6A" transform="rotate(288)"/>
+          <circle cx="0" cy="0" r="10" fill="#FFD54F"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Bottom-right flower -->
+    <div class="decor-flower" style="bottom:120px; right:38px; opacity:0.7;">
+      <svg width="65" height="65" viewBox="0 0 65 65" fill="none">
+        <g transform="translate(32,32)">
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF7043" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF8A65" transform="rotate(45)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF7043" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF8A65" transform="rotate(135)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF7043" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF8A65" transform="rotate(225)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF7043" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-11" rx="6.5" ry="11" fill="#FF8A65" transform="rotate(315)"/>
+          <circle cx="0" cy="0" r="8" fill="#FFF176"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Small scattered leaves -->
+    <div class="decor-flower" style="top:200px; left:20px; opacity:0.5; transform:rotate(-20deg);">
+      <svg width="40" height="60" viewBox="0 0 40 60" fill="none">
+        <path d="M20 55 C20 55 0 35 5 20 C10 5 30 5 35 20 C40 35 20 55 20 55Z" fill="#66BB6A"/>
+        <line x1="20" y1="55" x2="20" y2="18" stroke="#388E3C" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="decor-flower" style="top:220px; right:16px; opacity:0.5; transform:rotate(18deg);">
+      <svg width="36" height="54" viewBox="0 0 36 54" fill="none">
+        <path d="M18 50 C18 50 0 32 4 18 C8 4 28 4 32 18 C36 32 18 50 18 50Z" fill="#A5D6A7"/>
+        <line x1="18" y1="50" x2="18" y2="16" stroke="#388E3C" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="decor-flower" style="bottom:160px; left:20px; opacity:0.45; transform:rotate(12deg);">
+      <svg width="34" height="50" viewBox="0 0 34 50" fill="none">
+        <path d="M17 46 C17 46 0 29 4 17 C8 4 26 4 30 17 C34 29 17 46 17 46Z" fill="#66BB6A"/>
+        <line x1="17" y1="46" x2="17" y2="15" stroke="#388E3C" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <!-- ======== BRAND NAME ======== -->
+    <div class="brand">Ola<span>Brazil</span></div>
+    <div class="brand-tagline">sabores do brasil para o mundo</div>
+
+    <!-- ======== EASTER EGGS (SVG) ======== -->
+    <div class="eggs-row">
+
+      <!-- Egg 1 — small left -->
+      <svg width="100" height="130" viewBox="0 0 100 130" fill="none" style="margin-bottom:-10px; opacity:0.88;">
+        <defs>
+          <radialGradient id="egg1g" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#FFE082"/>
+            <stop offset="100%" stop-color="#F57F17"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="50" cy="72" rx="44" ry="56" fill="url(#egg1g)"/>
+        <!-- stripe decoration -->
+        <path d="M8 65 Q50 55 92 65" stroke="#FFF176" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M10 78 Q50 68 90 78" stroke="#FF8F00" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- dots -->
+        <circle cx="30" cy="52" r="5" fill="#FF7043" opacity="0.9"/>
+        <circle cx="55" cy="48" r="4" fill="#EC407A" opacity="0.9"/>
+        <circle cx="70" cy="56" r="5" fill="#66BB6A" opacity="0.9"/>
+        <!-- shine -->
+        <ellipse cx="35" cy="42" rx="10" ry="6" fill="white" opacity="0.25" transform="rotate(-20 35 42)"/>
+      </svg>
+
+      <!-- Egg 2 — tall center -->
+      <svg width="140" height="180" viewBox="0 0 140 180" fill="none">
+        <defs>
+          <radialGradient id="egg2g" cx="35%" cy="28%" r="65%">
+            <stop offset="0%" stop-color="#F48FB1"/>
+            <stop offset="100%" stop-color="#C2185B"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="70" cy="100" rx="62" ry="78" fill="url(#egg2g)"/>
+        <!-- zig-zag band -->
+        <polyline points="8,88 22,76 36,88 50,76 64,88 78,76 92,88 106,76 120,88 132,76" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+        <polyline points="8,104 22,92 36,104 50,92 64,104 78,92 92,104 106,92 120,104 132,92" stroke="#FFF176" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+        <!-- dots pattern -->
+        <circle cx="40" cy="70" r="6" fill="#FFC107" opacity="0.9"/>
+        <circle cx="70" cy="64" r="7" fill="#FFD54F" opacity="0.9"/>
+        <circle cx="100" cy="70" r="6" fill="#FFC107" opacity="0.9"/>
+        <circle cx="52" cy="118" r="5" fill="white" opacity="0.5"/>
+        <circle cx="80" cy="124" r="4" fill="white" opacity="0.5"/>
+        <!-- shine -->
+        <ellipse cx="48" cy="58" rx="14" ry="8" fill="white" opacity="0.22" transform="rotate(-20 48 58)"/>
+        <!-- bow ribbon on top -->
+        <path d="M55 24 C45 10 25 14 30 24 C35 34 55 28 70 22 C85 16 105 34 110 24 C115 14 95 10 85 24" fill="#FF7043" opacity="0.85"/>
+        <circle cx="70" cy="22" r="7" fill="#FF5722"/>
+      </svg>
+
+      <!-- Egg 3 — medium right-center -->
+      <svg width="112" height="148" viewBox="0 0 112 148" fill="none">
+        <defs>
+          <radialGradient id="egg3g" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#80DEEA"/>
+            <stop offset="100%" stop-color="#00838F"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="56" cy="82" rx="50" ry="64" fill="url(#egg3g)"/>
+        <!-- horizontal stripe with dot pattern -->
+        <rect x="8" y="72" width="96" height="20" fill="#006064" opacity="0.3" rx="4"/>
+        <circle cx="26" cy="82" r="5" fill="white" opacity="0.7"/>
+        <circle cx="44" cy="82" r="5" fill="#FFC107" opacity="0.85"/>
+        <circle cx="62" cy="82" r="5" fill="white" opacity="0.7"/>
+        <circle cx="80" cy="82" r="5" fill="#FFC107" opacity="0.85"/>
+        <circle cx="98" cy="82" r="5" fill="white" opacity="0.7"/>
+        <!-- top dots -->
+        <circle cx="38" cy="55" r="5" fill="#FF7043" opacity="0.8"/>
+        <circle cx="56" cy="50" r="6" fill="#EC407A" opacity="0.8"/>
+        <circle cx="74" cy="55" r="5" fill="#FF7043" opacity="0.8"/>
+        <!-- shine -->
+        <ellipse cx="38" cy="46" rx="11" ry="7" fill="white" opacity="0.25" transform="rotate(-18 38 46)"/>
+      </svg>
+
+      <!-- Egg 4 — small far right -->
+      <svg width="96" height="126" viewBox="0 0 96 126" fill="none" style="margin-bottom:-10px; opacity:0.88;">
+        <defs>
+          <radialGradient id="egg4g" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#CE93D8"/>
+            <stop offset="100%" stop-color="#7B1FA2"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="48" cy="70" rx="42" ry="54" fill="url(#egg4g)"/>
+        <!-- leaf/floral pattern -->
+        <path d="M48 36 C38 48 26 56 28 70 C30 82 48 90 48 90 C48 90 66 82 68 70 C70 56 58 48 48 36Z" fill="#9C27B0" opacity="0.35"/>
+        <!-- dots -->
+        <circle cx="36" cy="60" r="4.5" fill="#FFF176" opacity="0.9"/>
+        <circle cx="60" cy="60" r="4.5" fill="#FFF176" opacity="0.9"/>
+        <circle cx="48" cy="80" r="4.5" fill="#FFC107" opacity="0.9"/>
+        <!-- shine -->
+        <ellipse cx="34" cy="44" rx="9" ry="5.5" fill="white" opacity="0.25" transform="rotate(-20 34 44)"/>
+      </svg>
+    </div>
+
+    <!-- ======== MAIN HEADLINE ======== -->
+    <div class="headline-wrap">
+      <span class="headline">Feliz</span>
+      <span class="headline-sub">Páscoa!</span>
+    </div>
+
+    <!-- ======== DIVIDER ======== -->
+    <div class="divider">
+      <div class="divider-line"></div>
+      <!-- mini chocolate egg icon -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <ellipse cx="14" cy="14" rx="10" ry="13" fill="#8D6E63"/>
+        <ellipse cx="14" cy="14" rx="8" ry="11" fill="#A1887F"/>
+        <ellipse cx="10" cy="10" rx="3" ry="2" fill="white" opacity="0.3" transform="rotate(-20 10 10)"/>
+      </svg>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ======== BODY COPY ======== -->
+    <div class="body-copy">
+      Que essa Páscoa seja repleta de carinho,<br>
+      chocolate e momentos que aquecem o coração.
+    </div>
+
+    <!-- ======== BOTTOM TAGLINE ======== -->
+    <div class="bottom-tagline">com amor do Brasil para o mundo</div>
+
+  </div>
+</body>
+</html>

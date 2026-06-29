@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OlaBrazil — Posts</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0f0f0f;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 40px;
+    border-bottom: 1px solid #222;
+    background: #141414;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .brand-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #e07b00, #f5c842);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-name span { color: #f5a623; }
+
+  .badge {
+    background: linear-gradient(135deg, #e07b00, #f5c842);
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .stats-bar {
+    display: flex;
+    gap: 32px;
+    padding: 20px 40px;
+    background: #181818;
+    border-bottom: 1px solid #222;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f5a623;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .content {
+    padding: 40px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #282828;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #f5a623;
+  }
+
+  .preview-frame {
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    display: block;
+    background: #111;
+    pointer-events: none;
+  }
+
+  .card-footer {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #242424;
+  }
+
+  .card-info { display: flex; flex-direction: column; gap: 3px; }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #eee;
+  }
+
+  .card-meta {
+    font-size: 11px;
+    color: #555;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.15s;
+  }
+
+  .btn:hover { opacity: 0.85; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #e07b00, #f5c842);
+    color: #000;
+  }
+
+  .btn-ghost {
+    background: #2a2a2a;
+    color: #aaa;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .tag-new { background: #1a3a1a; color: #4caf50; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    color: #333;
+    font-size: 12px;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 20px;
+  }
+
+  footer span { color: #f5a623; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-icon">🌿</div>
+    <div class="brand-name">Ola<span>Brazil</span></div>
+  </div>
+  <div class="badge">POSTS 2026</div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value">5</div>
+    <div class="stat-label">Posts criados</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">3</div>
+    <div class="stat-label">Agentes em paralelo</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1080px</div>
+    <div class="stat-label">Resolução</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">100%</div>
+    <div class="stat-label">SVG Inline</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="section-title">Posts gerados — clique para abrir</div>
+
+  <div class="grid">
+
+    <div class="card" onclick="window.open('olabrazil_pascoa.html','_blank')">
+      <iframe class="preview-frame" src="olabrazil_pascoa.html" scrolling="no" title="Post Principal"></iframe>
+      <div class="card-footer">
+        <div class="card-info">
+          <div class="card-title">Post Principal <span class="tag tag-new">ORIGINAL</span></div>
+          <div class="card-meta">olabrazil_pascoa.html · 1080×1080</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="olabrazil_pascoa.html" target="_blank">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('pascoa_chocolate.html','_blank')">
+      <iframe class="preview-frame" src="pascoa_chocolate.html" scrolling="no" title="Ovo de Chocolate"></iframe>
+      <div class="card-footer">
+        <div class="card-info">
+          <div class="card-title">Ovo de Chocolate <span class="tag tag-new">NOVO</span></div>
+          <div class="card-meta">pascoa_chocolate.html · 1080×1080</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="pascoa_chocolate.html" target="_blank">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('pascoa_familia.html','_blank')">
+      <iframe class="preview-frame" src="pascoa_familia.html" scrolling="no" title="Família e Alegria"></iframe>
+      <div class="card-footer">
+        <div class="card-info">
+          <div class="card-title">Família & Alegria <span class="tag tag-new">NOVO</span></div>
+          <div class="card-meta">pascoa_familia.html · 1080×1080</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="pascoa_familia.html" target="_blank">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onclick="window.open('pascoa_tropical.html','_blank')">
+      <iframe class="preview-frame" src="pascoa_tropical.html" scrolling="no" title="Tropical Brasileiro"></iframe>
+      <div class="card-footer">
+        <div class="card-info">
+          <div class="card-title">Tropical Brasileiro <span class="tag tag-new">NOVO</span></div>
+          <div class="card-meta">pascoa_tropical.html · 1080×1080</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="pascoa_tropical.html" target="_blank">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card" onclick="window.open('olabrasil_feijoada.html','_blank')">
+      <iframe class="preview-frame" src="olabrasil_feijoada.html" scrolling="no" title="Feijoada"></iframe>
+      <div class="card-footer">
+        <div class="card-info">
+          <div class="card-title">Feijoada <span class="tag tag-new">NOVO</span></div>
+          <div class="card-meta">olabrasil_feijoada.html · 1080×1080</div>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-ghost" href="olabrasil_feijoada.html" target="_blank">Abrir</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Gerado por <span>Claude Code</span> · Design Squad · OlaBrazil 2026
+</footer>
+
+</body>
+</html>

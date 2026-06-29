@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Email</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F4F7F6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #FFFFFF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .header {
+            background-color: #1A1A1A;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #FFFFFF;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .content {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .content p {
+            color: #666666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .btn-container {
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #0CD179;
+            color: #FFFFFF !important;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0bb368;
+        }
+        .footer {
+            background-color: #F8FAF9;
+            padding: 24px 30px;
+            text-align: center;
+            border-top: 1px solid #EEEEEE;
+        }
+        .footer p {
+            color: #999999;
+            font-size: 14px;
+            margin: 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 20px;
+                border-radius: 16px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Financial Snapshot</h1>
+        </div>
+        <div class="content">
+            <h2 style="color: #111111; margin-top: 0; margin-bottom: 16px; font-size: 24px;">Bem-vindo(a) a bordo!</h2>
+            <p>
+                Você está a um passo de desbloquear o poder da inteligência artificial nas suas finanças. Confirme o seu endereço de e-mail clicando no botão abaixo para acessar o aplicativo e gerar o seu primeiro Snapshot Financeiro.
+            </p>
+            <div class="btn-container">
+                <a href="{{ .ConfirmationURL }}" class="btn">Confirmar Meu E-mail</a>
+            </div>
+            <p style="font-size: 14px; color: #999;">
+                Se você não solicitou este e-mail, pode ignorá-mo com segurança.
+            </p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2026 Financial Snapshot. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>

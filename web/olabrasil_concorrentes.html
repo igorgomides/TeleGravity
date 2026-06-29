@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Olabrazil — Análise de Concorrentes GTA & KW</title>
+  <meta name="description" content="Mapeamento de 18 concorrentes para Ola Brazil nas regiões GTA e Kitchener-Waterloo. Inclui produtos principais, público-alvo e nível de sobreposição competitiva por segmento (açaí, pastel, kibe, guaraná)."/>
+  <meta name="work-type" content="Pesquisa de Mercado"/>
+  <meta name="work-agent" content="UX Designer + General Research"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;800;900&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green:  #004320;
+      --orange: #C95404;
+      --purple: #5D0E66;
+      --yellow: #F9C054;
+      --beige:  #FCF2DD;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #111;
+      font-family: 'Josefin Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 64px;
+      gap: 10px;
+      min-height: 100vh;
+    }
+
+    .page-label {
+      color: #ffffff22;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .carousel { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
+    .card { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+    .slide {
+      width: 390px;
+      height: 390px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .slide .photo {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .slide .overlay { position: absolute; inset: 0; }
+    .slide .top-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; z-index: 10; }
+    .slide .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 5px; z-index: 10; }
+    .slide .logo-img { position: absolute; z-index: 20; }
+    .slide .handle { position: absolute; z-index: 20; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: white; opacity: 0.55; }
+    .slide .tag { position: absolute; z-index: 20; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; }
+    .slide .txt { position: absolute; z-index: 20; }
+
+    .slide-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff33; }
+    .dots { display: flex; gap: 5px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: #ffffff18; }
+    .dot.on { background: #ffffffaa; width: 16px; border-radius: 3px; }
+
+    /* ══ SLIDE 1 — KIBE + GUARANÁ ══ */
+    .s1 .overlay {
+      background: linear-gradient(160deg, rgba(0,67,32,0.82) 0%, rgba(0,67,32,0.5) 45%, rgba(0,30,10,0.78) 100%);
+    }
+    .s1 .top-bar { background: linear-gradient(90deg, var(--orange), var(--yellow), var(--orange)); }
+    .s1 .bottom-bar { background: var(--orange); opacity: 0.7; }
+    .s1 .tag { top: 20px; left: 20px; background: var(--orange); color: white; }
+    .s1 .handle { top: 20px; right: 20px; }
+    .s1 .logo-img { bottom: 108px; left: 24px; width: 100px; filter: brightness(0) invert(1); opacity: 0.9; }
+    .s1 .txt { bottom: 26px; left: 24px; right: 24px; }
+    .s1 .txt h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 52px; line-height: 0.95;
+      color: white; text-transform: uppercase; letter-spacing: -1px;
+    }
+    .s1 .txt h2 em { font-style: normal; color: var(--yellow); }
+    .s1 .txt .sub {
+      font-size: 10px; font-weight: 400; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--yellow); opacity: 0.75;
+      margin-top: 6px; display: block;
+    }
+
+    /* ══ SLIDE 2 — AÇAÍ ══ */
+    .s2 .photo { object-position: center 20%; }
+    .s2 .overlay {
+      background: linear-gradient(to top, rgba(93,14,102,0.95) 0%, rgba(93,14,102,0.55) 40%, rgba(40,0,50,0.25) 100%);
+    }
+    .s2 .top-bar { background: linear-gradient(90deg, var(--yellow), var(--orange), var(--yellow)); }
+    .s2 .tag { top: 20px; left: 20px; border: 1.5px solid var(--yellow); color: var(--yellow); background: transparent; }
+    .s2 .handle { top: 20px; right: 20px; }
+    .s2 .stars { position: absolute; top: 55px; right: 24px; display: flex; flex-direction: column; gap: 18px; z-index: 20; }
+    .s2 .star { font-size: 13px; color: var(--yellow); animation: twinkle 1.8s ease-in-out infinite alternate; }
+    .s2 .star:nth-child(2) { animation-delay: .6s; font-size: 9px; }
+    .s2 .star:nth-child(3) { animation-delay: 1.2s; font-size: 11px; }
+    @keyframes twinkle {
+      from { opacity: .15; transform: scale(.9); }
+      to   { opacity: .95; transform: scale(1.1); }
+    }
+    .s2 .txt { bottom: 26px; left: 0; right: 0; text-align: center; padding: 0 24px; }
+    .s2 .txt h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 72px; line-height: 0.9;
+      color: white; text-transform: uppercase; letter-spacing: -2px;
+    }
+    .s2 .txt h2 em { font-style: normal; color: var(--yellow); }
+    .s2 .txt .sub {
+      font-size: 10px; font-weight: 400; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--yellow); opacity: 0.7;
+      margin-top: 8px; display: block;
+    }
+
+    /* ══ SLIDE 3 — CTA / EMILY ══ */
+    .s3 .photo { object-position: center 15%; }
+    .s3 .overlay {
+      background: linear-gradient(to top, rgba(201,84,4,0.97) 0%, rgba(201,84,4,0.6) 38%, rgba(0,0,0,0.1) 100%);
+    }
+    .s3 .top-bar { background: var(--green); }
+    .s3 .bottom-bar { background: var(--yellow); }
+    .s3 .handle { top: 20px; right: 20px; }
+    .s3 .logo-img { top: 14px; left: 18px; width: 90px; filter: brightness(0) invert(1); opacity: 0.9; }
+    .s3 .txt { bottom: 72px; left: 0; right: 0; text-align: center; padding: 0 28px; }
+    .s3 .txt .eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--yellow); display: block; margin-bottom: 4px;
+    }
+    .s3 .txt h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900; font-size: 54px; line-height: 0.95;
+      color: white; text-transform: uppercase; letter-spacing: -1px;
+    }
+    .s3 .txt h2 em { font-style: normal; color: var(--yellow); }
+    .s3 .info { margin-top: 12px; display: flex; flex-direction: column; gap: 5px; }
+    .s3 .info-row {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.5px; color: white; opacity: 0.9;
+    }
+    .s3 .dot-m { width: 5px; height: 5px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; }
+    .s3 .cta-pill {
+      position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+      background: var(--yellow); color: var(--green);
+      font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+      padding: 10px 28px; border-radius: 100px; white-space: nowrap; z-index: 30;
+    }
+
+    /* ══ COMPETITOR ANALYSIS SECTION ══ */
+    .section-divider {
+      width: 100%; max-width: 1300px;
+      border-top: 1px solid #ffffff0e;
+      margin: 48px auto 0;
+    }
+
+    .comp-section {
+      width: 100%; max-width: 1300px;
+      padding: 0 12px;
+    }
+
+    .comp-header {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; margin-bottom: 36px;
+    }
+    .comp-header .label {
+      font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--orange); font-weight: 700;
+    }
+    .comp-header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px; font-weight: 900; letter-spacing: -1px;
+      text-transform: uppercase; color: white;
+    }
+    .comp-header h1 em { font-style: normal; color: var(--yellow); }
+    .comp-header .sub {
+      font-size: 11px; color: #ffffff44; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+
+    .region-block { margin-bottom: 48px; }
+    .region-label {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .region-label .pill {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 4px;
+    }
+    .pill-gta { background: var(--green); color: var(--yellow); }
+    .pill-kw  { background: var(--purple); color: var(--yellow); }
+    .region-label .line { flex: 1; height: 1px; background: #ffffff0d; }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .comp-card {
+      background: #1a1a1a;
+      border: 1px solid #ffffff0a;
+      border-radius: 8px;
+      padding: 18px 20px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color .2s;
+    }
+    .comp-card:hover { border-color: #ffffff18; }
+
+    .comp-card-top {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
+    }
+    .comp-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px; font-weight: 800; text-transform: uppercase;
+      color: white; line-height: 1.1;
+    }
+    .overlap-badge {
+      font-size: 8px; font-weight: 800; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 100px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .ov-very-high  { background: #C95404; color: white; }
+    .ov-high       { background: #C9540466; color: #ffbb77; border: 1px solid #C95404aa; }
+    .ov-mod-high   { background: #5D0E6655; color: #cc88dd; border: 1px solid #5D0E66aa; }
+    .ov-moderate   { background: #00432022; color: #66aa88; border: 1px solid #00432055; }
+    .ov-low        { background: #ffffff0a; color: #ffffff44; border: 1px solid #ffffff11; }
+
+    .comp-location {
+      font-size: 9px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: #ffffff33;
+    }
+
+    .comp-row { display: flex; flex-direction: column; gap: 3px; }
+    .comp-row-label {
+      font-size: 8px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--yellow); opacity: 0.55;
+    }
+    .comp-row-val {
+      font-size: 11px; color: #ffffffbb; line-height: 1.4;
+    }
+
+    .comp-type-tag {
+      display: inline-block;
+      font-size: 8px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 3px;
+      background: #ffffff0a; color: #ffffff44; border: 1px solid #ffffff0d;
+      width: fit-content;
+    }
+
+    .comp-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 10px; border-top: 1px solid #ffffff07;
+    }
+
+    .comp-stats {
+      display: flex; gap: 28px; align-items: center;
+      justify-content: center; flex-wrap: wrap;
+      margin: 0 auto 12px; width: 100%;
+    }
+    .stat-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px; font-weight: 900; color: var(--yellow); line-height: 1;
+    }
+    .stat-desc { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #ffffff33; }
+  </style>
+</head>
+<body>
+
+  <p class="page-label">Ola Brazil Food Lovers — Instagram Carousel</p>
+
+  <div class="carousel">
+
+    <!-- SLIDE 1 — KIBE + GUARANÁ -->
+    <div class="card">
+      <div class="slide s1">
+        <img class="photo" src="FOTOS PRODUTO/IMG_9001.jpeg" alt="Kibe and Guaraná"/>
+        <div class="overlay"></div>
+        <div class="top-bar"></div>
+        <div class="bottom-bar"></div>
+        <div class="tag">Savory Party Snacks</div>
+        <div class="handle">@olabrazilfoodlovers</div>
+        <img class="logo-img" src="LOGO FINALIZADA.png" alt="logo"/>
+        <div class="txt">
+          <h2>Kibe &<br/><em>Guaraná</em></h2>
+          <span class="sub">Authentic Brazilian Flavour</span>
+        </div>
+      </div>
+      <p class="slide-label">Slide 1 — Kibe + Guaraná</p>
+      <div class="dots">
+        <div class="dot on"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — AÇAÍ -->
+    <div class="card">
+      <div class="slide s2">
+        <img class="photo" src="FOTOS PRODUTO/IMG_9020.jpeg" alt="Açaí Bowl"/>
+        <div class="overlay"></div>
+        <div class="top-bar"></div>
+        <div class="tag">From the Amazon</div>
+        <div class="handle">@olabrazilfoodlovers</div>
+        <div class="stars">
+          <span class="star">✦</span>
+          <span class="star">✦</span>
+          <span class="star">✦</span>
+        </div>
+        <div class="txt">
+          <h2><em>Açaí</em><br/>Bowl</h2>
+          <span class="sub">Refreshing · Pure · Real</span>
+        </div>
+      </div>
+      <p class="slide-label">Slide 2 — Açaí Bowl</p>
+      <div class="dots">
+        <div class="dot"></div><div class="dot on"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — CTA -->
+    <div class="card">
+      <div class="slide s3">
+        <img class="photo" src="PHOTOS/FEV 2026/JPG/EMILY-PASTEL.jpg" alt="Emily eating Pastel"/>
+        <div class="overlay"></div>
+        <div class="top-bar"></div>
+        <div class="bottom-bar"></div>
+        <img class="logo-img" src="LOGO FINALIZADA.png" alt="logo"/>
+        <div class="handle">@olabrazilfoodlovers</div>
+        <div class="txt">
+          <span class="eyebrow">Find us every</span>
+          <h2>This<br/><em>Saturday</em></h2>
+          <div class="info">
+            <div class="info-row"><div class="dot-m"></div><span>Kitchener Farmers Market</span></div>
+            <div class="info-row"><div class="dot-m"></div><span>200 King St W · Lower Level</span></div>
+            <div class="info-row"><div class="dot-m"></div><span>7 AM – 2 PM · Saturdays Only</span></div>
+          </div>
+        </div>
+        <div class="cta-pill">Come Hungry ↗</div>
+      </div>
+      <p class="slide-label">Slide 3 — CTA</p>
+      <div class="dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot on"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ══ COMPETITOR ANALYSIS ══ -->
+  <div style="display:flex; flex-direction:column; align-items:center; padding: 48px 16px 80px; background:#111; width:100%;">
+    <div class="comp-section">
+
+      <div class="comp-header">
+        <span class="label">Market Intelligence · 2026</span>
+        <h1>Análise de <em>Concorrentes</em></h1>
+        <span class="sub">GTA · Greater Toronto Area &nbsp;&nbsp;|&nbsp;&nbsp; KW · Kitchener-Waterloo</span>
+      </div>
+
+      <!-- STATS SUMMARY -->
+      <div class="comp-stats" style="margin-bottom:40px;">
+        <div class="stat-item"><span class="stat-num">18</span><span class="stat-desc">Concorrentes Mapeados</span></div>
+        <div class="stat-item"><span class="stat-num" style="color:var(--orange);">5</span><span class="stat-desc">Overlap Muito Alto</span></div>
+        <div class="stat-item"><span class="stat-num" style="color:#cc88dd;">11</span><span class="stat-desc">GTA Region</span></div>
+        <div class="stat-item"><span class="stat-num" style="color:var(--green);">7</span><span class="stat-desc">KW Region</span></div>
+      </div>
+
+      <!-- ── GTA ── -->
+      <div class="region-block">
+        <div class="region-label">
+          <span class="pill pill-gta">GTA — Greater Toronto Area</span>
+          <div class="line"></div>
+        </div>
+        <div class="comp-grid">
+
+          <!-- 1 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Samba Brazil Eatery</span>
+              <span class="overlap-badge ov-high">Alto</span>
+            </div>
+            <span class="comp-location">Toronto · St Clair W · Yonge St</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Pastel (20+ sabores), Sandubas brasileiros, Carne Louca, Carne Seca</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Diáspora brasileira, foodies de Toronto, clientes de almoço</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">QSR · Multi-location + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Açaí Brazil</span>
+              <span class="overlap-badge ov-very-high">Muito Alto</span>
+            </div>
+            <span class="comp-location">Toronto · Yonge / Davisville</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl, Guaraná Antarctica, Kibe, Coxinha, Pão de Queijo</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Comunidade brasileira, consumidores saudáveis, fluxo da Yonge</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Café Counter + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Açaí Concept</span>
+              <span class="overlap-badge ov-very-high">Muito Alto</span>
+            </div>
+            <span class="comp-location">Toronto · Dundas St W</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl, Kibe, Coxinha, Brigadeiro, Dragon Fruit bowl</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Amantes de açaí, comunidade brasileira, foco saúde</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Specialty Açaí Café + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Purpel Açaí</span>
+              <span class="overlap-badge ov-mod-high">Moderado-Alto</span>
+            </div>
+            <span class="comp-location">Toronto · Union Station · Liberty Village · The Well</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl, smoothies, chia pudding, bowls veganos</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Profissionais urbanos, commuters, health-conscious</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Kiosk · Alta Circulação + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Oakberry Açaí</span>
+              <span class="overlap-badge ov-mod-high">Moderado-Alto</span>
+            </div>
+            <span class="comp-location">North York · Etobicoke · Mississauga · Toronto Downtown</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl (OAK Size 24oz), smoothies, toppings ilimitados</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Público amplo saudável, famílias, estudantes — marca global</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Rede Global · Storefront + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Copacabana Steakhouse</span>
+              <span class="overlap-badge ov-low">Baixo</span>
+            </div>
+            <span class="comp-location">Toronto · Vaughan · Niagara Falls</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Rodízio (18+ cortes), churrasco, salad bar, acompanhamentos</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Famílias, corporativo, ocasiões especiais, turistas</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Restaurante Full-Service</span>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Touro Brazilian Steakhouse</span>
+              <span class="overlap-badge ov-low">Baixo</span>
+            </div>
+            <span class="comp-location">Vaughan · Richmond Hill</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Churrascaria premium, BBQ all-you-can-eat, wine bar</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Jantar upscale, grupos, celebrações</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Restaurante Full-Service</span>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Rodeo Brazilian Steakhouse</span>
+              <span class="overlap-badge ov-low">Baixo</span>
+            </div>
+            <span class="comp-location">Toronto · The Danforth</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Rodízio, carnes na tábua, acompanhamentos tradicionais</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">East Toronto, diáspora brasileira, jantar em grupo</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Restaurante Full-Service</span>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Só Brasil Market</span>
+              <span class="overlap-badge ov-moderate">Moderado</span>
+            </div>
+            <span class="comp-location">Toronto · St Clair Ave W</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Guaraná Antarctica, biscoitos, salgados, produtos brasileiros importados</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Diáspora brasileira, cozinheiros de casa, nostálgicos</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Mercado Brasileiro · Importados</span>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Brazilian Market Toronto</span>
+              <span class="overlap-badge ov-moderate">Moderado</span>
+            </div>
+            <span class="comp-location">GTA · Online / Delivery</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Guaraná Zero, salgados embalados, produtos de mercearia brasileira</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Diáspora brasileira em toda GTA, e-commerce</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Mercearia Online + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Plaza Latina Food Court</span>
+              <span class="overlap-badge ov-moderate">Moderado</span>
+            </div>
+            <span class="comp-location">GTA · Toronto</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Empanadas, pupusas, arepas, doces latino-americanos</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Comunidade latina do GTA, aventureiros gastronômicos</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Food Court Latino · Estandes</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── KW ── -->
+      <div class="region-block">
+        <div class="region-label">
+          <span class="pill pill-kw">KW — Kitchener · Waterloo · Cambridge</span>
+          <div class="line"></div>
+        </div>
+        <div class="comp-grid">
+
+          <!-- 12 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Passado Brasil Food Truck</span>
+              <span class="overlap-badge ov-high">Alto</span>
+            </div>
+            <span class="comp-location">Cambridge · Kitchener · Waterloo · Eventos</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Pastel (salgado e doce), tapioca puffs, mini pastéis</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Brasileiros locais, frequentadores de eventos e feiras</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Food Truck · Mobile · Eventos</span>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Snack Brazuca</span>
+              <span class="overlap-badge ov-very-high">Muito Alto</span>
+            </div>
+            <span class="comp-location">Cambridge · Entrega KW, Guelph, Woodstock</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Kibe, Coxinha, Pastel, hot bar, assados frescos, produtos portugueses/brasileiros</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Diáspora brasileira e portuguesa, clientes de entrega na região KW</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Loja Take-Out + Delivery (DoorDash, Skip)</span>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Seu Mercado</span>
+              <span class="overlap-badge ov-high">Alto</span>
+            </div>
+            <span class="comp-location">Kitchener · Bloomingdale Rd N</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Pastel, Coxinha, Pão de Queijo, mercearia brasileira completa</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Comunidade brasileira de Kitchener/Waterloo</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Mercado Brasileiro + Balcão + Uber Eats</span>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">Oakberry Açaí (Waterloo)</span>
+              <span class="overlap-badge ov-high">Alto</span>
+            </div>
+            <span class="comp-location">Waterloo · 308 King St N</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl, smoothies, toppings ilimitados — açaí puro do Amazonas</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Estudantes (UW / Laurier), jovens profissionais, saúde & bem-estar</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Rede Global · Storefront + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 16 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">BerryBir &amp; Beans</span>
+              <span class="overlap-badge ov-high">Alto</span>
+            </div>
+            <span class="comp-location">Waterloo · Food Truck / Pop-Up</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Açaí bowl, Dragon Fruit bowl, smoothies, superfood toppings</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Consumidores saudáveis, estudantes, frequentadores de food trucks</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Food Truck / Mobile Vendor</span>
+            </div>
+          </div>
+
+          <!-- 17 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">KW Empanadas</span>
+              <span class="overlap-badge ov-mod-high">Moderado-Alto</span>
+            </div>
+            <span class="comp-location">Kitchener · King St E + Kitchener Market (Sábados)</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Empanadas (salgadas e doces), alfajores — opções halal e sem glúten</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Trabalhadores do centro, visitantes do market, fãs de comida latina</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Loja + Estande no Kitchener Market + Delivery</span>
+            </div>
+          </div>
+
+          <!-- 18 -->
+          <div class="comp-card">
+            <div class="comp-card-top">
+              <span class="comp-name">America Latina Grocery</span>
+              <span class="overlap-badge ov-moderate">Moderado</span>
+            </div>
+            <span class="comp-location">Kitchener · Victoria St N</span>
+            <div class="comp-row">
+              <span class="comp-row-label">Produtos Principais</span>
+              <span class="comp-row-val">Pupusas, empanadas, tamales, birria tacos, churros, platano frito</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-row-label">Público-Alvo</span>
+              <span class="comp-row-val">Comunidade centro-americana de Kitchener (salvadorenha, guatemalteca, mexicana)</span>
+            </div>
+            <div class="comp-footer">
+              <span class="comp-type-tag">Mercearia Latina + Balcão de Comida</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LEGEND -->
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:32px; padding-top:24px; border-top:1px solid #ffffff0a;">
+        <span style="font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#ffffff22;">Nível de Sobreposição:</span>
+        <span class="overlap-badge ov-very-high" style="font-size:9px;">Muito Alto</span>
+        <span class="overlap-badge ov-high" style="font-size:9px;">Alto</span>
+        <span class="overlap-badge ov-mod-high" style="font-size:9px;">Moderado-Alto</span>
+        <span class="overlap-badge ov-moderate" style="font-size:9px;">Moderado</span>
+        <span class="overlap-badge ov-low" style="font-size:9px;">Baixo</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
