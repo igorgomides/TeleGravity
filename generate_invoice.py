@@ -10,6 +10,7 @@ class InvoicePDF(FPDF):
         
     def header(self):
         # Draw Logo: "escala solutions" (top-left)
+        self.set_xy(15, 15)
         self.set_font('Arial', 'B', 22)
         # "escala" in orange-red
         self.set_text_color(231, 76, 60)
@@ -19,22 +20,29 @@ class InvoicePDF(FPDF):
         self.cell(40, 12, 'solutions', 0, 0, 'L')
         
         # Right info (top-right)
-        self.set_x(-120)
+        self.set_xy(90, 15)
         self.set_font('Arial', 'B', 12)
         self.set_text_color(44, 62, 80)
         self.cell(105, 5, 'ESCALA SOLUTIONS', 0, 1, 'R')
         
-        self.set_x(-120)
-        self.set_font('Arial', '', 9)
+        self.set_x(90)
+        self.set_font('Arial', '', 8.5)
         self.set_text_color(100, 100, 100)
-        self.cell(105, 4, 'Kitchener, ON | igorgomides.ca@gmail.com | (519) 240-5450', 0, 1, 'R')
+        self.cell(105, 4, 'Business Number: 78804 5417 RT 0001', 0, 1, 'R')
         
-        self.ln(10)
+        self.set_x(90)
+        self.cell(105, 4, '320 Sedgewood Street', 0, 1, 'R')
+        
+        self.set_x(90)
+        self.cell(105, 4, 'Kitchener, Ontario, N2P0J6, Canada', 0, 1, 'R')
+        
+        self.set_x(90)
+        self.cell(105, 4, 'Email: igorgomides.ca@gmail.com | Phone: (519) 502-8015', 0, 1, 'R')
         
         # Divider Line
         self.set_draw_color(220, 220, 220)
         self.set_line_width(0.5)
-        self.line(15, 33, 195, 33)
+        self.line(15, 43, 195, 43)
 
 def get_wrapped_lines(pdf, text, max_width):
     paragraphs = str(text).split('\n')
@@ -61,7 +69,7 @@ def create_invoice(client_name: str, client_address: str, items: list, tax_rate:
     pdf.add_page()
     
     # TITLE & DETAILS / BILL TO (two column layout)
-    pdf.set_y(40)
+    pdf.set_y(50)
     
     # Title: "INVOICE"
     pdf.set_font('Arial', 'B', 24)
